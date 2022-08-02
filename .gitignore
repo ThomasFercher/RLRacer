@@ -55,3 +55,8 @@ app.*.map.json
 
 # Dependency
 pubspec.lock
+
+
+#Api
+.env.dart
+.env

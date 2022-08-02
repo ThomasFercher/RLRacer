@@ -64,6 +64,9 @@ class AppTheme extends ThemeInterface {
               footer: FooterColorsOverride(
                 background: colors.background5,
               ),
+              bottomBar: BottomBarColorsOverride(
+                backgroundColor: colors.background5.darken(0.2),
+              ),
               sider: SiderColorsOverride(
                   background: colors.primary,
                   foreground: colors.foreground5,
@@ -150,9 +153,9 @@ class AppTheme extends ThemeInterface {
         elevation3: 2,
         elevation4: 4,
         iconSize1: 16,
-        iconSize2: 24,
-        iconSize3: 28,
-        iconSize4: 32,
+        iconSize2: 20,
+        iconSize3: 24,
+        iconSize4: 30,
         radius1: 8,
         radius2: 12,
         radius3: 16,
@@ -198,7 +201,7 @@ class AppTheme extends ThemeInterface {
               ),
               iconSize: 22,
               spacing: 4,
-              logoSize: 48,
+              logoSize: 56,
               buildComponents: (AppBarSizingInfo appBar) {
                 return AppBarSizingComponents(
                   menuSizing: MenuSizingStyle(
@@ -251,13 +254,13 @@ class AppTheme extends ThemeInterface {
               },
             ),
             bottomBarSizing: BottomBarSizingStyle(
-              iconSize: 24,
-              height: 80,
-              itemWidth: 72,
+              iconSize: sizing.iconSize2,
+              height: 56,
+              itemWidth: 56,
               margin: EdgeInsets.zero,
-              itemPadding: EdgeInsets.all(0),
-              padding: EdgeInsets.symmetric(vertical: 6),
-              decoration: BoxDecoration(
+              itemPadding: const EdgeInsets.all(4),
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black12,
@@ -266,8 +269,8 @@ class AppTheme extends ThemeInterface {
                   ),
                 ],
               ),
-              alignment: MainAxisAlignment.spaceAround,
-              showText: true,
+              alignment: MainAxisAlignment.center,
+              showText: false,
               fillBottom: true,
               textAtBottom: true,
             ),

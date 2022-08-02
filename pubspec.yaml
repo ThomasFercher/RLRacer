@@ -1,4 +1,4 @@
-name: legend_design_template
+name: rl_racer
 description: A Template for new Projects using Legend Design
 
 publish_to: 'none' 
@@ -6,12 +6,21 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^1.0.4
+  hooks_riverpod: ^1.0.4
+  flutter_hooks: ^0.18.5+1
+  
   cupertino_icons: ^1.0.2
+  google_maps_flutter: ^2.1.9
+  flutter_polyline_points: ^1.0.0
+  google_fonts: ^2.0.1
+  location: ^4.4.0
+  dio: ^4.0.6
   legend_design_widgets:
     git:
       url: https://github.com/ThomasFercher/legend-widgets.git

@@ -9,12 +9,13 @@ import 'package:legend_design_core/layout/navigation/tabbar/legend_tabbar.dart';
 import 'package:legend_design_core/layout/scaffold/config/scaffold_config.dart';
 import 'package:legend_design_core/router/scaffold_route_info.dart';
 import 'package:legend_design_core/widgets/icons/legend_animated_icon.dart';
-import 'package:legend_design_template/content/modals/settings.dart';
-import 'package:legend_design_template/content/pages/screen1.dart';
-import 'package:legend_design_template/content/pages/screen2.dart';
 import 'package:legend_router/router/legend_router.dart';
 import 'package:legend_design_core/styles/legend_theme.dart';
 import 'package:legend_router/router/routes/route_display.dart';
+
+import 'package:rl_racer/content/modals/settings.dart';
+import 'package:rl_racer/content/pages/screen1.dart';
+import 'package:rl_racer/content/pages/screen2.dart';
 
 import '../content/pages/screen3.dart';
 import '../content/pages/screen4.dart';
@@ -40,7 +41,7 @@ class RoutesTheme extends RouteInterface<PageLayout> {
           const RouteLayout(
             appBarLayout: AppBarLayout(
               AppBarLayoutConfig.fixedAbove,
-              AppBarLayoutType.TiMeAc,
+              AppBarLayoutType.MeTiAc,
             ),
             bottomBarLayout: BottomBarLayout.Show,
             footerLayout: FooterLayout.None,
@@ -171,15 +172,15 @@ class RoutesTheme extends RouteInterface<PageLayout> {
       PageInfo(
         name: "/",
         config: ScaffoldRouteConfig(
-          pageName: "Screen 1",
+          pageName: "Map",
           layout: layouts[PageLayout.Header]!,
         ),
-        page: const Screen1(),
+        page: Screen1(),
       ),
       PageInfo(
-        name: "/colors",
+        name: "/tracks",
         config: ScaffoldRouteConfig(
-          pageName: "Colors",
+          pageName: "Tracks",
           layout: layouts[PageLayout.Sider]!,
           whether: const ScaffoldWhether(
             showSiderMenu: true,
@@ -191,7 +192,7 @@ class RoutesTheme extends RouteInterface<PageLayout> {
         page: const Screen2(),
       ),
       PageInfo(
-        name: "/sizing",
+        name: "/leaderboard",
         config: ScaffoldRouteConfig(
           pageName: "Sizing",
           layout: layouts[PageLayout.Sider]!,
@@ -200,28 +201,6 @@ class RoutesTheme extends RouteInterface<PageLayout> {
           ),
         ),
         page: const Screen3(),
-      ),
-      TabviewPageInfo(
-        name: "/screen4",
-        style: TabBarStyle(
-            background: theme.colors.background1,
-            height: 48,
-            alignment: MainAxisAlignment.center),
-        config: ScaffoldRouteConfig(
-          pageName: "Screen 4",
-          layout: layouts[PageLayout.Header]!,
-        ),
-        page: const Screen4(),
-        children: [
-          TabviewChildPageInfo(
-            name: "/screen4/test",
-            page: Container(),
-            config: ScaffoldRouteConfig(
-              pageName: "Cool 1",
-              layout: layouts[PageLayout.Header]!,
-            ),
-          ),
-        ],
       ),
       ModalRouteInfo(
         name: "/settings",
@@ -240,31 +219,19 @@ class RoutesTheme extends RouteInterface<PageLayout> {
   List<RouteDisplay> buildDisplays() {
     return [
       const SimpleRouteDisplay(
-        title: "Home",
+        title: "Map",
         route: "/",
         icon: Icons.home,
       ),
       const SimpleRouteDisplay(
-        title: "Colors",
-        route: "/colors",
+        title: "Tracks",
+        route: "/tracks",
         icon: Icons.text_snippet,
       ),
       const SimpleRouteDisplay(
-        title: "Sizing",
-        route: "/sizing",
+        title: "Leaderboard",
+        route: "/leaderboard",
         icon: Icons.abc_rounded,
-      ),
-      const TabRouteDisplay(
-        title: "Screen 4",
-        route: "/screen4",
-        icon: Icons.yard_rounded,
-        children: [
-          SimpleRouteDisplay(
-            title: "Development",
-            route: "/screen4/test",
-            icon: Icons.yard_sharp,
-          ),
-        ],
       ),
     ];
   }
